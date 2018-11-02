@@ -1,3 +1,4 @@
+
 // Graphical variables
 @import "config/fonts";
 @import "config/colors";
@@ -8,6 +9,7 @@
 @import "bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "dropzone/dropzone";
 
 // Your CSS partials
 @import "layouts/index";
@@ -18,3 +20,4 @@
 #star{
   color: #d1a523;
 }
+

@@ -1,10 +1,10 @@
 class CocktailsController < ApplicationController
+  before_action :set_cocktail, only: %i[show update]
   def index
     @cocktails = Cocktail.all
   end
 
   def show
-    set_cocktail
   end
 
   def new
@@ -24,6 +24,12 @@ class CocktailsController < ApplicationController
   end
 
   def update
+    set_photo_params
+    if @cocktail.update(cocktail_params)
+      render json: { success: 'sucesso!'}
+    else
+      render :show
+    end
   end
 
   def destroy
@@ -31,8 +37,12 @@ class CocktailsController < ApplicationController
 
   private
 
+  def set_photo_params
+    params[:cocktail][:photo] = params[:file]
+  end
+
   def cocktail_params
-    params.require(:cocktail).permit(:name)
+    params.require(:cocktail).permit(:name, :photo)
   end
 
   def set_cocktail

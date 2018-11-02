@@ -15,7 +15,16 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 gem 'webpacker'
+
+gem 'jquery-rails'
+
 gem 'dotenv-rails', groups: [:development, :test]
+
+gem 'cloudinary'
+
+gem 'dropzonejs-rails'
+
+gem 'carrierwave', '~> 1.2'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'mini_racer', platforms: :ruby
 
